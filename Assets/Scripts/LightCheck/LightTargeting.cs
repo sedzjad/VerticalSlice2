@@ -5,29 +5,30 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class LightTargeting : MonoBehaviour    
 {
-    public GameObject Player;
+    private GameObject Player;
     public float range = 30;
 
     [HideInInspector]
     public Vector3 direction;
+    public Vector3 LastPlayerLocation;
 
     [HideInInspector]
     public Light Spotlight;
 
     public bool PlayerInLight = false;
+    public bool PlayerSighted = false;
 
     public Color LightNormal;
     public Color LightDetected;
     AudioSource DetectedSound;
 
-    // Start is called before the first frame update
     void Start()
     {
+        Player = GameObject.FindGameObjectWithTag("Player");
         Spotlight = GetComponent<Light>();
         DetectedSound = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         RaycastCheck();
@@ -44,8 +45,9 @@ public class LightTargeting : MonoBehaviour
             Debug.DrawRay(transform.position, direction, Color.red, 2, false);
             if (hit.transform.name == "Player")
             {
+                LastPlayerLocation = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
                 Spotlight.color = LightDetected;
-                PlayerInLight = true;
+                PlayerSighted = true;
                 if (!DetectedSound.isPlaying)
                 {
                     DetectedSound.Play(0);

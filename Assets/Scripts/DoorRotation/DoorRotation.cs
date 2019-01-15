@@ -43,7 +43,7 @@ public class DoorRotation : MonoBehaviour
             }
         }
     }
-
+ 
     public void OpenAndCloseDoor()
     {
         TimeLeft += Time.deltaTime;
