@@ -6,7 +6,7 @@ public class ThresholdStatuses : MonoBehaviour {
 
     public List<ZoneStatuses> statusList = new List<ZoneStatuses>();
     public ZoneStatuses StatusToUpdate;
-    private int listNumber = 0;
+    private bool listNumber1 = false;
     
     // Use this for initialization
 	void Start () {
@@ -15,12 +15,18 @@ public class ThresholdStatuses : MonoBehaviour {
 
     public void ChangeStatusToUpdate()
     {
-        listNumber += 1;
-        if(listNumber > statusList.Count)
-        {   
-            listNumber = 0;
+        if(listNumber1 == true)
+        {
+            Debug.Log("Hit");
+            StatusToUpdate = statusList[0];
+        }else if(listNumber1 == false)
+        {
+            Debug.Log("Hit2");
+            StatusToUpdate = statusList[1];
+
         }
-        StatusToUpdate = statusList[listNumber];
+
+        listNumber1 = !listNumber1;
     }
 	
 
