@@ -12,6 +12,7 @@ public class MoveTowardsPos : MonoBehaviour
     public float walkSpeed = 5f;
     public float runSpeed = 7f;
     public float rotateSpeed = 20f;
+    
 
     void Start()
     {
@@ -41,6 +42,7 @@ public class MoveTowardsPos : MonoBehaviour
 
     private void RunToPlayer()
     {
+
         float speedR = runSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, MyFlashlight.GetComponent<LightTargeting>().LastPlayerLocation, speedR);
         RotationCheck();

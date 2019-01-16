@@ -6,7 +6,7 @@ using UnityEngine;
 public class Crouch : MonoBehaviour
 {
 
-    private bool C = false;                 //The boolean for the crouch toggle
+    public bool C = false;                 //The boolean for the crouch toggle
     public CapsuleCollider PlayerCollider;  //The hitbox for the player
 
     public float StandingHeight = 1.95f;
