@@ -16,6 +16,11 @@ public class Sprint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SprintFunctie();
+    }
+
+    void SprintFunctie()
+    {
         //Checks if left shift is pressed, and changes speed to the sprinting speed.
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {

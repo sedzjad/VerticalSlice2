@@ -6,18 +6,22 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class MasterAudio : MonoBehaviour
 {
-    //Audio clips
+    //Audio clips for walking
     AudioSource audioData;
     public AudioClip Gravel;
     public AudioClip Pavement;
     public AudioClip Grass;
 
+    //Audio clips for crouched walking
     public AudioClip MuffledGravel;
     public AudioClip MuffledPavement;
     public AudioClip MuffledGrass;
 
     Crouch cro;
     ZoneStatusUpdater zone;
+
+    public GameObject reverb;
+    public GameObject Crouch;
 
     private bool IsWalking = false;
 
@@ -32,32 +36,64 @@ public class MasterAudio : MonoBehaviour
         audioData.Pause();
 
         //Gets the crouch & zone component from the parent.
-        cro = GetComponentInParent<Crouch>();
+        cro = Crouch.GetComponent<Crouch>();
         zone = GetComponentInParent<ZoneStatusUpdater>();
+
+        //Gets the Reverb component
+        reverb.GetComponent<AudioReverbZone>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //All of the audio zone if statements
-        if (cro.C == true && zone.zStatus == ZoneStatuses.Indoors)
+        //All of the audio zone if statements with crouch and standing up.
+        if (cro.C == true && zone.zStatus == ZoneStatuses.IndoorsHalls || cro.C == true && zone.zStatus == ZoneStatuses.IndoorsRoom)
         {
             audioData.clip = MuffledPavement;
+            reverb.GetComponent<AudioReverbZone>().enabled = false;
         }
 
-        else if (cro.C == false && zone.zStatus == ZoneStatuses.Indoors)
+        else if (cro.C == false && zone.zStatus == ZoneStatuses.IndoorsHalls || cro.C == false && zone.zStatus == ZoneStatuses.IndoorsRoom)
         {
             audioData.clip = Pavement;
+            reverb.GetComponent<AudioReverbZone>().enabled = false;
         }
 
-        else if (cro.C == true && zone.zStatus == ZoneStatuses.Outdoors)
+        //Reverb effect triggers when entering the Lounge.
+        else if (cro.C == true && zone.zStatus == ZoneStatuses.IndoorsLounge)
+        {
+            audioData.clip = MuffledPavement;
+            reverb.GetComponent<AudioReverbZone>().enabled = true;
+        }
+
+        else if (cro.C == false && zone.zStatus == ZoneStatuses.IndoorsLounge)
+        {
+            audioData.clip = Pavement;
+            reverb.GetComponent<AudioReverbZone>().enabled = true;
+        }
+
+        else if (cro.C == true && zone.zStatus == ZoneStatuses.OutdoorsGravel)
         {
             audioData.clip = MuffledGravel;
+            reverb.GetComponent<AudioReverbZone>().enabled = false;
         }
 
-        else if (cro.C == false && zone.zStatus == ZoneStatuses.Outdoors)
+        else if (cro.C == false && zone.zStatus == ZoneStatuses.OutdoorsGravel)
         {
             audioData.clip = Gravel;
+            reverb.GetComponent<AudioReverbZone>().enabled = false;
+        }
+
+        else if (cro.C == true && zone.zStatus == ZoneStatuses.OutdoorsGrass)
+        {
+            audioData.clip = MuffledGrass;
+            reverb.GetComponent<AudioReverbZone>().enabled = false;
+        }
+
+        else if (cro.C == false && zone.zStatus == ZoneStatuses.OutdoorsGrass)
+        {
+            audioData.clip = Grass;
+            reverb.GetComponent<AudioReverbZone>().enabled = false;
         }
 
         //Sound effects start when pressing one or more of the buttons.
@@ -84,14 +120,12 @@ public class MasterAudio : MonoBehaviour
     //Resumes the sound.
     void ResumeSound()
     {
-        Debug.Log("Continue");
         audioData.Play();
     }
 
     //Pauses the sound
     void PauseSound()
     {
-        Debug.Log("Stop");
         audioData.Pause();
     }
 }

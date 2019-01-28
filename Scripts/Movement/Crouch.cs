@@ -10,18 +10,28 @@ public class Crouch : MonoBehaviour
     public AudioClip CrouchSound;
     public AudioClip StandingSound;
 
-    public bool C = false;                 //The boolean for the crouch toggle.
+    public bool C = false;                  //The boolean for the crouch toggle.
+    public bool Standing = true;            //The boolean to fix the overextension for the standing hitbox
+    public bool Crouching = false;          //The boolean to fix the overextension for the crouching hitbox
+
     public CapsuleCollider PlayerCollider;  //The hitbox for the player.
     
     public float StandingHeight = 1.95f;    //Standing hitbox
     public float CrouchingHeight = 1.05f;   //Crouching hitbox
 
+    public float CrouchingOffsetY = -0.4f;  //Offsets for the crouching animation
+    public float StandingOffsetY = 0.4f;
+
+    public float differ;                    //Is the float for changing the heights
+
     movement mov;
+
+    
 
     private void Start()
     {
-        audioData = GetComponent<AudioSource>();    //Gets the audio source component on the gameobject.
-        mov = GetComponent<movement>();             //Gets the movement script.
+        audioData = GetComponentInParent<AudioSource>();    //Gets the audio source component on the gameobject.
+        mov = GetComponentInParent<movement>();             //Gets the movement script.
     }
 
     void Update()
@@ -32,7 +42,7 @@ public class Crouch : MonoBehaviour
             C = true;
             mov.speed = mov.speed / 2;              //Changes walking speed to crouching speed.
             audioData.clip = CrouchSound;
-            audioData.Play(0);
+            audioData.Play();
         }
 
         //From Crouching to Standing with the sound effect.
@@ -41,28 +51,48 @@ public class Crouch : MonoBehaviour
             C = false;
             mov.speed = mov.speed * 2;              //Changes crouching speed to walking speed.
             audioData.clip = StandingSound;
-            audioData.Play(0);
+            audioData.Play();
         }
 
         else if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             if (C == true)
             {
-                mov.speed = mov.speed * 2;
+                mov.speed = mov.speed * 2;          //Changes crouching speed to walking speed.
                 C = false;
             }
         }
 
         //The hitbox for Standing to Crouching.
-        if (C == true && PlayerCollider.height >= CrouchingHeight)
+        if (C == true && PlayerCollider.height >= CrouchingHeight && Crouching == false)
         {
-            PlayerCollider.height = PlayerCollider.height - 0.05f;
+            PlayerCollider.height = PlayerCollider.height - differ;
+            Standing = false;
+            
+            //Changes the position of the hit box to the crouching position.
+            transform.Translate(0, CrouchingOffsetY, 0);
+
+            //If it reaches, or gets lower then the crouching heights, it stops lowering the height.
+            if (PlayerCollider.height <= CrouchingHeight)
+            {
+                Crouching = true;
+            }
         }
 
         //The hitbox for Crouching to Standing.
-        else if (C == false && PlayerCollider.height <= StandingHeight)
+        else if (C == false && PlayerCollider.height <= StandingHeight && Standing == false)
         {
-            PlayerCollider.height = PlayerCollider.height + 0.05f;
+            PlayerCollider.height = PlayerCollider.height + differ;
+            Crouching = false;
+
+            // Changes the position of the hit box to the standing position
+            transform.Translate(0, StandingOffsetY, 0);
+
+            //If it reaches, or gets bigger then the crouching heights, it stops making the height bigger.
+            if (PlayerCollider.height >= StandingHeight)
+            {
+                Standing = true;
+            }
         }
     }
 }
