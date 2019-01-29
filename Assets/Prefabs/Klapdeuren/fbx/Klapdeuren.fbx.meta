@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: fa7fd35f51a659e47a83d59099c928f4
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Door1
+    100002: Door1 1
+    100004: Door1 2
+    100006: Door2
+    100008: Door2 1
+    100010: Door2 2
+    100012: //RootNode
+    100014: scharnieren
+    100016: scharnieren 1
+    100018: scharnieren 2
+    100020: wall_tile_klapdeur
+    100022: walltile_klapdeur_closing
+    100024: walltile_klapdeur_opening
+    100026: Window1
+    100028: Window2
+    100030: Window3
+    100032: Window4
+    100034: Window5
+    100036: Window6
+    400000: Door1
+    400002: Door1 1
+    400004: Door1 2
+    400006: Door2
+    400008: Door2 1
+    400010: Door2 2
+    400012: //RootNode
+    400014: scharnieren
+    400016: scharnieren 1
+    400018: scharnieren 2
+    400020: wall_tile_klapdeur
+    400022: walltile_klapdeur_closing
+    400024: walltile_klapdeur_opening
+    400026: Window1
+    400028: Window2
+    400030: Window3
+    400032: Window4
+    400034: Window5
+    400036: Window6
+    2100000: door
+    2100002: klapdeur
+    2100004: window
+    2300000: Door1
+    2300002: Door1 1
+    2300004: Door1 2
+    2300006: Door2
+    2300008: Door2 1
+    2300010: Door2 2
+    2300012: scharnieren
+    2300014: scharnieren 1
+    2300016: scharnieren 2
+    2300018: wall_tile_klapdeur
+    2300020: walltile_klapdeur_closing
+    2300022: walltile_klapdeur_opening
+    2300024: Window1
+    2300026: Window2
+    2300028: Window3
+    2300030: Window4
+    2300032: Window5
+    2300034: Window6
+    3300000: Door1
+    3300002: Door1 1
+    3300004: Door1 2
+    3300006: Door2
+    3300008: Door2 1
+    3300010: Door2 2
+    3300012: scharnieren
+    3300014: scharnieren 1
+    3300016: scharnieren 2
+    3300018: wall_tile_klapdeur
+    3300020: walltile_klapdeur_closing
+    3300022: walltile_klapdeur_opening
+    3300024: Window1
+    3300026: Window2
+    3300028: Window3
+    3300030: Window4
+    3300032: Window5
+    3300034: Window6
+    4300000: walltile_klapdeur_opening
+    4300002: scharnieren
+    4300004: Door2
+    4300006: Window5
+    4300008: Door1
+    4300010: Window6
+    4300012: wall_tile_klapdeur
+    4300014: scharnieren
+    4300016: Door2
+    4300018: Window3
+    4300020: Door1
+    4300022: Window4
+    4300024: walltile_klapdeur_closing
+    4300026: scharnieren
+    4300028: Door1
+    4300030: Window1
+    4300032: Door2
+    4300034: Window2
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: door
+    second: {fileID: 2100000, guid: f1e33cdd768f211469d0d96ad8404f64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: klapdeur
+    second: {fileID: 2100000, guid: f1e33cdd768f211469d0d96ad8404f64, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: window
+    second: {fileID: 2100000, guid: f34514995a803884d9875304736d8bdf, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

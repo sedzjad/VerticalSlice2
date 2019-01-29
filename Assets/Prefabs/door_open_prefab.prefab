@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1491853070341625521
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100002, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_Name
+      value: door_animation_opening
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 55.548046
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.000034701243
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06486054
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0004655566
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f34514995a803884d9875304736d8bdf, type: 2}
+    - target: {fileID: 2300006, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f34514995a803884d9875304736d8bdf, type: 2}
+    - target: {fileID: 9500000, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 1c0b8db021e4dae4a9b064d265fd5d7f, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: df1cebcc48f2310498d3be9e3cae6bcb, type: 3}
