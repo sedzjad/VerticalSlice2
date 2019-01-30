@@ -10,6 +10,9 @@ TagManager:
   - Object
   - Roof
   - ZoneBorder
+  - Pullable
+  - Enemy
+  - Item
   layers:
   - Default
   - TransparentFX

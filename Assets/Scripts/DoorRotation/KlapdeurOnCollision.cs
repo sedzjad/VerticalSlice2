@@ -20,7 +20,7 @@ public class KlapdeurOnCollision : MonoBehaviour
         {
 
             
-            Anim.Play("Opening_Animatie");
+            Anim.Play("DoorOpen");
             DoorOpen = true;
             Box.isTrigger = true;
         }
@@ -31,7 +31,7 @@ public class KlapdeurOnCollision : MonoBehaviour
         if(DoorOpen == true && other.tag == "Player")
         {
             
-            Anim.Play("Closing_Animatie");
+            Anim.Play("DoorClosed");
             DoorOpen = false;
             Box.isTrigger = false;
         }
