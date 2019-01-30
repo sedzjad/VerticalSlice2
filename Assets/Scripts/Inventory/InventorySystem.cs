@@ -59,10 +59,10 @@ public class InventorySystem : MonoBehaviour
     {
         for( int i = 0; i < AllSlots; i++)
         {
-            Debug.Log("slots: " + AllSlots);
+            
             if (slot[i].GetComponent<Slot>().Empty)
             {
-                Debug.Log("slot " + i + " is empty");
+                
 
                 ItemObject.GetComponent<Items>().PickedUp = true;
                 slot[i].GetComponent<Slot>().Item = ItemObject;

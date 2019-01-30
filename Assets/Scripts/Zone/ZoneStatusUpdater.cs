@@ -45,7 +45,7 @@ public class ZoneStatusUpdater : MonoBehaviour
         switch (state)
         {
             case ZoneStatuses.IndoorsRoom:
-                camera.transform.localRotation = Quaternion.Euler(15, 0, 0);
+                camera.transform.localRotation = Quaternion.Euler(0, 0, 0);
                 camera.GetComponent<CameraCollision>().maxDistance = -0.02f;
                
                 break;
