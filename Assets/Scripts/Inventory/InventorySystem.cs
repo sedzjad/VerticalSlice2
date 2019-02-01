@@ -14,6 +14,7 @@ public class InventorySystem : MonoBehaviour
 
     public GameObject[] slot;
 
+    public bool KeyForTheDoor;
 
     void Start()
     {
@@ -53,6 +54,10 @@ public class InventorySystem : MonoBehaviour
             Items item = ItemPickedUp.GetComponent<Items>();
 
             AddItem(ItemPickedUp, item.ID, item.type, item.description, item.Icon);
+            if(item.type == "weapon")
+            {
+                item.Equipped = true;
+            }
         }
     }
     public void AddItem(GameObject ItemObject,int ItemID, string ItemType, string ItemDescription, Sprite ItemIcon)
@@ -76,8 +81,9 @@ public class InventorySystem : MonoBehaviour
 
                 slot[i].GetComponent<Slot>().UpdateSlot();
                 slot[i].GetComponent<Slot>().Empty = false;
+                return;
             }
-            return;
+            
         }
     }
 }

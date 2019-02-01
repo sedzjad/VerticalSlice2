@@ -12,14 +12,15 @@ public class Slot : MonoBehaviour, IPointerClickHandler
     public string type;
     public string description;
     public int ID;
+    public Sprite Icon;
 
     public bool Empty;
     
-    public Sprite Icon;
+   
 
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        UseItem();
+        //UseItem();
     }
 
     private void Start()
@@ -34,6 +35,6 @@ public class Slot : MonoBehaviour, IPointerClickHandler
 
     public void UseItem()
     {
-        Item.GetComponent<Items>().ItemUsage();
+        //Item.GetComponent<Items>().ItemUsage();
     }
 }

@@ -16,50 +16,57 @@ public class Items : MonoBehaviour
     [HideInInspector]
     public GameObject Weapon;
     [HideInInspector]
-    public GameObject Key;
-    [HideInInspector]
-    public GameObject WeaponManager;
+    public GameObject ItemManager;
 
     public bool PlayersWeapon;
-    public bool PlayersKey;
-    public bool DoorKey;
 
-    [SerializeField]
-    private GameObject _sleutel;
+
 
     public void Start()
     {
-         if (!PlayersKey)
+        Equipped = false;
+
+        ItemManager = GameObject.FindWithTag("ItemManager");
+        Weapon = GameObject.FindWithTag("Item");
+        
+
+    }
+
+    private void Update()
+    {
+        if (!PlayersWeapon)
         {
-            int allKeys = _sleutel.transform.childCount;
-            for(int i = 0; i<allKeys; i++)
+            int allWeapons = ItemManager.transform.childCount;
+
+            for (int i = 0; i < allWeapons; i++)
             {
-                if(_sleutel.transform.GetChild(i).gameObject.GetComponent<Items>().ID == ID)
+                if (ItemManager.transform.GetChild(i).gameObject.GetComponent<Items>().ID == ID)
                 {
-                    Key = _sleutel.transform.GetChild(i).gameObject;
+                    Weapon = ItemManager.transform.GetChild(i).gameObject;
+                }
+            }
+        }
+        ItemUsage();
+        if (Equipped)
+        {
+            if (Input.GetKeyDown(KeyCode.G))
+            {
+                Equipped = false;
+                if(Equipped == false)
+                {
+                    this.gameObject.SetActive(false);
                 }
             }
         }
     }
 
-    private void Update()
-    {
-       if (Equipped)
-        {
-
-        }
-    }
-
     public void ItemUsage()
     {
-        if (type == "Weapon")
-        {
-          
-            Equipped = true;
-        }
-        else if (type == "Key")
-        {
-            DoorKey = true;   
+        
+        if (PickedUp == true)
+        {        
+                Equipped = true;
+            
         }
     }
 

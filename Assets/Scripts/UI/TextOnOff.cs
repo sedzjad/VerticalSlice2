@@ -8,24 +8,26 @@ public class TextOnOff : MonoBehaviour
 
     public GameObject OpenPanel;
     public Text textbox;
+    private float timer = 3;
 
 
-    private void OnTriggerEnter(Collider other)
+    public void NoKeyText()
     {
-        if (other.tag == "Player")
+        OpenPanel.SetActive(true);
+        textbox.text = "Return and find the key!";
+        for (int i = 0; i <timer; i++)
         {
-            OpenPanel.SetActive(true);
+            timer += Time.deltaTime;
+            if(timer >= 6)
+            {
+                OpenPanel.SetActive(false);
+            }
         }
-    }
-    
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            OpenPanel.SetActive(false);
-        }
     }
+        
+
+
 
 
 

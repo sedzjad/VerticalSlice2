@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class KlapdeurOnCollision : MonoBehaviour
 {
-    
+    public Items item;
     public Animator Anim;
     private bool DoorOpen;
     public BoxCollider Box;
+
 
     private void Start()
     {
@@ -15,14 +16,22 @@ public class KlapdeurOnCollision : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnCollisionStay(Collision collision) 
     {
-        if (collision.gameObject.tag == "Player" && GetComponent<Items>().DoorKey == true)
+        
+        if (collision.gameObject.tag == "Player" && item.Equipped == true)
         {
             Anim.Play("DoorOpen");
             DoorOpen = true;
             Box.isTrigger = true;
         }
+        else if (collision.gameObject.tag == "Player" && item.Equipped == false)
+        {
+            GetComponent<TextOnOff>().NoKeyText();
+            
+        }
+       
     }
     private void OnTriggerExit(Collider other)
     {
@@ -34,5 +43,6 @@ public class KlapdeurOnCollision : MonoBehaviour
             DoorOpen = false;
             Box.isTrigger = false;
         }
+        
     }
 }
