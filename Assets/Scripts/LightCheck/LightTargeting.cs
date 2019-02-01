@@ -43,7 +43,7 @@ public class LightTargeting : MonoBehaviour
             Physics.Raycast(transform.position, direction, out hit, range);
 
             Debug.DrawRay(transform.position, direction, Color.red, 2, false);
-            if (hit.transform.name == "Player")
+            if (hit.transform.tag == "Player")
             {
                 LastPlayerLocation = new Vector3(Player.transform.position.x, Player.transform.position.y, Player.transform.position.z);
                 Spotlight.color = LightDetected;
@@ -55,7 +55,7 @@ public class LightTargeting : MonoBehaviour
 
                 
             }
-            else if (hit.transform.name != "Player")
+            else if (hit.transform.tag != "Player")
             {
                 Spotlight.color = LightNormal;
             }

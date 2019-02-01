@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KlapdeurOnCollision : MonoBehaviour
 {
+    
     public Animator Anim;
     private bool DoorOpen;
     public BoxCollider Box;
@@ -11,15 +12,13 @@ public class KlapdeurOnCollision : MonoBehaviour
     private void Start()
     {
         DoorOpen = false;
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        
-        if(collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && GetComponent<Items>().DoorKey == true)
         {
-
-            
             Anim.Play("DoorOpen");
             DoorOpen = true;
             Box.isTrigger = true;

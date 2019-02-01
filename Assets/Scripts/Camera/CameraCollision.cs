@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraCollision : MonoBehaviour {
 
-    public float minDistance = 14.0f;
-    public float maxDistance = 15.0f;
+    public float minDistance = 0.0f;
+    public float maxDistance = 10.0f;
     public float smooth = 10.0f;
     Vector3 dollyDir;
     public Vector3 dollyDirAdjusted;
@@ -27,7 +27,7 @@ public class CameraCollision : MonoBehaviour {
 
         if (Physics.Linecast(transform.parent.position, desiredCameraPos,out hit,9))
         {
-            distance = Mathf.Clamp((hit.distance * 0.87f), minDistance, maxDistance);
+            distance = Mathf.Clamp((hit.distance * 0.017f), minDistance, maxDistance);
 
         }
         else

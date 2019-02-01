@@ -12,7 +12,7 @@ public class InventorySystem : MonoBehaviour
     private int EnabledSlots;
     public GameObject SlotHolder;
 
-    private GameObject[] slot;
+    public GameObject[] slot;
 
 
     void Start()
@@ -24,7 +24,7 @@ public class InventorySystem : MonoBehaviour
         {
             slot[i] = SlotHolder.transform.GetChild(i).gameObject;
 
-            if(slot[i].GetComponent<Slot>().Item = null)
+            if(slot[i].GetComponent<Slot>().Item == null)
             {
                 slot[i].GetComponent<Slot>().Empty = true;
             }
@@ -55,7 +55,7 @@ public class InventorySystem : MonoBehaviour
             AddItem(ItemPickedUp, item.ID, item.type, item.description, item.Icon);
         }
     }
-    void AddItem(GameObject ItemObject,int ItemID, string ItemType, string ItemDescription, Sprite ItemIcon)
+    public void AddItem(GameObject ItemObject,int ItemID, string ItemType, string ItemDescription, Sprite ItemIcon)
     {
         for( int i = 0; i < AllSlots; i++)
         {

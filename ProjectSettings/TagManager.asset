@@ -13,6 +13,7 @@ TagManager:
   - Pullable
   - Enemy
   - Item
+  - WeaponManager
   layers:
   - Default
   - TransparentFX

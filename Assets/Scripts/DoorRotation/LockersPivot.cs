@@ -7,12 +7,9 @@ public class LockersPivot : MonoBehaviour
     public float Speed;
     public bool DoorOpen;
     public bool HasToClose;
-    private Vector3 OpeningAngle;
+    
 
-    public void Start()
-    {
-        OpeningAngle = new Vector3(0, -220, 0);
-    }
+
     public void Update()
     {
         if(HasToClose == true)
