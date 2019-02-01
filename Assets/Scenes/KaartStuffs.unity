@@ -33772,7 +33772,7 @@ GameObject:
   - component: {fileID: 744290558}
   - component: {fileID: 744290559}
   m_Layer: 0
-  m_Name: Map7
+  m_Name: FinalMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93225,7 +93225,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 888631121889553301}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.33, y: 0.618, z: -25.65}
+  m_LocalPosition: {x: 22.33, y: 0.618, z: -64.9}
   m_LocalScale: {x: 50.96005, y: 50.960003, z: 50.96005}
   m_Children:
   - {fileID: 1147189548625782095}
@@ -93378,6 +93378,7 @@ GameObject:
   - component: {fileID: 888631121889553321}
   - component: {fileID: 888631121889553304}
   - component: {fileID: 888631121889553303}
+  - component: {fileID: 888631121889553305}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -93431,6 +93432,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   rotateSpeed: 250
+--- !u!136 &888631121889553305
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888631121889553301}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.018015902
+  m_Height: 0.07480522
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &888631121889553321
 MonoBehaviour:
   m_ObjectHideFlags: 0
